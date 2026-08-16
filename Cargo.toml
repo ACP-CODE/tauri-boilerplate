@@ -1,0 +1,23 @@
+# 文档参考：https://doc.rust-lang.org/cargo/reference/workspaces.html
+[workspace]
+# 1. 匹配模式：只匹配 apps 下一级子目录中的 src-tauri
+# 避免使用 ** 防止递归过度匹配到 node_modules 或深层缓存
+members = ["apps/*/src-tauri"]
+
+# 2. 强制设定 Resolver 版本为 2（解决依赖合并冲突，Rust 2021+ 必备）
+resolver = "2"
+
+# 3. 默认成员（极重要）：当你在根目录执行 cargo build 时，只编译这里列出的应用
+# 如果不设置，Cargo 会编译所有匹配到的成员，如果 apps 下有 10 个应用，构建会非常慢
+default-members = ["apps/application/src-tauri"]
+
+# 4. 排除项：排除那些占位/模板/遗留的不合法 crate
+exclude = []
+
+# 5. 选配：共享的 package 元数据
+[workspace.package]
+authors = ["Cyril"]
+
+
+[patch.crates-io]
+wry = { git = "https://github.com/JakiChen/wry", branch = "compat/macos-media-permission-conditional" }

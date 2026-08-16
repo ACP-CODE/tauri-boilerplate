@@ -1,0 +1,42 @@
+{
+  "name": "application",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "license": "MIT",
+  "author": "Cyril",
+  "type": "module",
+  "scripts": {
+    "vite": "vite",
+    "tauri": "tauri",
+    "dev": "vp dev",
+    "test": "vp test",
+    "build": "vp exec tsc && vp build",
+    "preview": "vp preview"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^6.0.5",
+    "typescript": "~5.8.3",
+    "vite": "^8.2.1"
+  },
+  "browserslist": {
+    "production": [
+      "Edge >= 110",
+      "Safari >= 15",
+      "Chrome >= 100"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 safari version"
+    ]
+  }
+}

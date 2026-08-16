@@ -1,0 +1,12 @@
+packages:
+    - apps/**/*
+    - packages/**/*
+
+allowBuilds:
+    "@swc/core": true
+    edgedriver: true
+    esbuild: true
+    geckodriver: true
+
+overrides:
+    esbuild: 0.26.0

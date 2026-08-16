@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Credits</title>
+        <style>
+            /* ----- 基础样式（不会直接生效，由 class 控制） ----- */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto,
+                    Helvetica, Arial, sans-serif;
+                padding: 30px 28px;
+                line-height: 1.6;
+                transition:
+                    background 0.25s,
+                    color 0.25s;
+            }
+
+            /* ----- 亮色模式 ----- */
+            body.light {
+                background: #f5f5f7;
+                color: #1c1c1e;
+            }
+            body.light .section-title {
+                color: #3a3a3c;
+            }
+            body.light a {
+                color: #007aff;
+            }
+            body.light .copyright {
+                color: #8e8e93;
+            }
+
+            /* ----- 暗色模式 ----- */
+            body.dark {
+                background: #1c1c1e;
+                color: #f5f5f7;
+            }
+            body.dark .section-title {
+                color: #aeaeb2;
+            }
+            body.dark a {
+                color: #0a84ff;
+            }
+            body.dark .copyright {
+                color: #636366;
+            }
+
+            /* ----- 通用布局 ----- */
+            .section {
+                margin-bottom: 18px;
+            }
+            .section-title {
+                font-weight: 600;
+                font-size: 14px;
+                margin-bottom: 6px;
+                letter-spacing: 0.3px;
+            }
+            .contributors {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 6px 18px;
+                font-size: 14px;
+            }
+            .contributors span {
+                white-space: nowrap;
+            }
+            a {
+                text-decoration: none;
+                font-weight: 400;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .link-group a {
+                margin-right: 16px;
+            }
+            .copyright {
+                margin-top: 16px;
+                font-size: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 内容 -->
+        <div class="section">
+            <div class="section-title">开发团队与贡献者</div>
+            <div class="contributors">
+                <span>张三</span>
+                <span>李四</span>
+                <span>王五</span>
+                <span>赵六</span>
+            </div>
+        </div>
+
+        <div class="section link-group">
+            <a href="https://example.com">官方网站</a>
+            <a href="https://example.com/privacy">隐私政策</a>
+            <a href="https://github.com">GitHub</a>
+        </div>
+
+        <div class="section">
+            <div class="section-title">特别致谢</div>
+            <div style="font-size: 14px">感谢所有参与测试和反馈的用户。</div>
+        </div>
+
+        <div class="copyright">© 2026 Jaki Chen · 保留所有权利</div>
+
+        <!-- 主题检测与监听脚本 -->
+        <script>
+            (function () {
+                function setTheme(theme) {
+                    const body = document.body;
+                    body.classList.remove("light", "dark");
+                    if (theme === "dark") {
+                        body.classList.add("dark");
+                    } else {
+                        body.classList.add("light");
+                    }
+                }
+
+                // 1. 初次加载时检测
+                const darkModeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+                setTheme(darkModeMedia.matches ? "dark" : "light");
+
+                // 2. 监听变化
+                try {
+                    darkModeMedia.addEventListener("change", function (e) {
+                        setTheme(e.matches ? "dark" : "light");
+                    });
+                } catch (e) {
+                    // 兼容旧版 Safari（使用 addListener）
+                    darkModeMedia.addListener(function (e) {
+                        setTheme(e.matches ? "dark" : "light");
+                    });
+                }
+            })();
+        </script>
+    </body>
+</html>

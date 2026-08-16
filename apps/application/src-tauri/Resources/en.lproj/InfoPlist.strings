@@ -1,0 +1,4 @@
+CFBundleDisplayName = "My GTD App";
+CFBundleName = "My GTD App";
+MDItemKeywords = "GTD, todo, task, schedule, planner, productivity, reminder, inbox";
+NSHumanReadableCopyright= "";

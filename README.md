@@ -2,11 +2,11 @@
 
 This is a modern Monorepo project template based on the Tauri framework, integrating frontend, backend, and desktop applications all in one.
 
-## 🚀 Project Structrue
+<!-- ## 🚀 Project Structrue
 
-Inside of your Tauri monorepo, you'll see the following folders and files:
+Inside of your Tauri monorepo, you'll see the following folders and files: -->
 
-```sh
+<!-- ```
 /
 ├── apps/
 │   ├── application/                         # tauri project
@@ -34,4 +34,4 @@ Inside of your Tauri monorepo, you'll see the following folders and files:
 ├── Cargo.toml
 ├── package.json
 └── vite.config.ts
-```
+``` -->

@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "identifier": "dev.org.App-beta",
+  "identifier": "dev.org.Application",
   "bundle": {
     "resources": {
       "resources/apple/shared/": "./"

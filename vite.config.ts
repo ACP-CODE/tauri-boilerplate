@@ -6,7 +6,7 @@ const isCI = process.env.CI === "true" || process.env.CI === "1" || !!process.en
 // https://viteplus.dev/config
 export default defineConfig({
     staged: {
-        "*": "vp check --fix",
+        "*": ["vp fmt", "vp check --fix"],
     },
     fmt: {
         ignorePatterns: ["dist/*"],

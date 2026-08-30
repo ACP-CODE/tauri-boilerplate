@@ -3,7 +3,10 @@
   "type": "module",
   "scripts": {
     "wdio": "wdio",
-    "test": "wdio run ./wdio.conf.ts"
+    "pretest": "pnpm run build:e2e-binary",
+    "test": "wdio run ./wdio.conf.ts",
+    "test:no-build": "wdio run ./wdio.conf.ts",
+    "build:e2e-binary": "cd ../src-tauri && pnpm tauri build"
   },
   "devDependencies": {
     "@types/node": "^26.2.0",

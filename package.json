@@ -11,18 +11,25 @@
     "lint": "vp lint",
     "check": "vp check",
     "test": "vpr -r test",
-    "test:e2e": "sh -c 'vpr --filter \"${1:-application}-e2e\" wdio' --",
-    "dev": "sh -c 'vpr --filter \"${1:-application}\" tauri dev' --",
-    "build": "sh -c 'vpr --filter \"${1:-application}\" tauri build' --",
-    "ready": "vpr check && vpr test && vpr build"
+    "prebuild": "vpr check && vpr test",
+    "test:e2e": "node scripts/run.mjs test:e2e",
+    "dev": "node scripts/run.mjs dev",
+    "build": "node scripts/run.mjs build",
+    "vite": "node scripts/run.mjs vite",
+    "tauri": "node scripts/run.mjs tauri",
+    "wdio": "node scripts/run.mjs wdio",
+    "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {
-    "vite-plus": "^0.2.8"
+    "vite-plus": "^0.3.0"
+  },
+  "config": {
+    "app": "application"
   },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "11.22.0",
+      "version": "11.24.0",
       "onFail": "download"
     }
   }

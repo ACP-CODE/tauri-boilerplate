@@ -1,0 +1,5 @@
+CFBundleDisplayName = "Application";
+CFBundleSpokenName = "Application";
+CFBundleName = "App";
+MDItemKeywords = "Keyword 1, Keyword 2, Keyword 3, Keyword 4";
+NSHumanReadableCopyright= "Copyright © 2026 Solus. All rights reserved.";

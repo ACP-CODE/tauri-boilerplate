@@ -1,4 +1,5 @@
 /// <reference types="@wdio/tauri-service" />
+/// <reference types="@wdio/tauri-plugin" />
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -110,7 +111,7 @@ export const config: WebdriverIO.Config = {
     //         {
     //             driverProvider: "official",
     //             appBinaryPath:
-    //                 "../../../target/release/bundle/macos/Application.app/Contents/MacOS/application",
+    //                 "../src-taurid/target/release/bundle/macos/Application.app",
     //             // see https://webdriver.io/docs/desktop-testing/tauri/configuration for all options
     //         },
     //     ],

@@ -1,0 +1,5 @@
+CFBundleDisplayName = "應用程式顯示名稱";
+CFBundleSpokenName = "應用程式顯示名稱";
+CFBundleName = "應用名稱";
+MDItemKeywords = "關鍵字1, 關鍵字2, 關鍵字3, 關鍵字4";
+NSHumanReadableCopyright = "版權所有 © 2026 Solus。保留所有權利。";

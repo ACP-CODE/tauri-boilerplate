@@ -18,7 +18,7 @@ export default defineConfig({
         },
     },
     check: {
-        fmt: isCI,
+        fmt: true,
         lint: true,
     },
     test: {

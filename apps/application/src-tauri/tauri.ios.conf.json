@@ -2,7 +2,11 @@
   "$schema": "https://schema.tauri.app/config/2",
   "identifier": "dev.org.App-beta",
   "bundle": {
+    "resources": {
+      "resources/apple/shared/": "./"
+    },
     "iOS": {
+      "infoPlist": "resources/apple/Info.plist",
       "minimumSystemVersion": "14.0"
     }
   }

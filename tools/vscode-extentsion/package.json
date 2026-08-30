@@ -1,0 +1,31 @@
+{
+  "name": "solus",
+  "displayName": "%extension.displayName%",
+  "version": "0.0.1",
+  "private": "true",
+  "description": "%extension.description%",
+  "categories": [
+    "Other"
+  ],
+  "license": "MIT",
+  "publisher": "Cyril",
+  "main": "./out/extension.js",
+  "scripts": {
+    "vscode:prepublish": "vpr build",
+    "build": "tsc -p ./",
+    "dev": "tsc -watch -p ./",
+    "tsc": "tsc",
+    "vsce": "vsce"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "1.105.0",
+    "@vscode/vsce": "^3.9.2",
+    "typescript": "^5.6.0"
+  },
+  "l10n": "./l10n",
+  "activationEvents": [],
+  "engines": {
+    "vscode": "^1.105.0"
+  }
+}

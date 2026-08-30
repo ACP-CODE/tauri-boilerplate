@@ -13,6 +13,7 @@ export default defineConfig({
             typeAware: true,
             typeCheck: true,
         },
+        ignorePatterns: ["scripts/*"],
     },
     check: {
         fmt: true,

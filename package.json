@@ -18,6 +18,8 @@
     "vite": "node scripts/run.mjs vite",
     "tauri": "node scripts/run.mjs tauri",
     "wdio": "node scripts/run.mjs wdio",
+    "vsce": "node scripts/run.mjs vsce",
+    "tsc": "node scripts/run.mjs tsc",
     "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {

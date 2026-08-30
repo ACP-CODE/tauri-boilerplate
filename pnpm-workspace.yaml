@@ -1,12 +1,15 @@
 packages:
     - apps/**/*
     - packages/**/*
+    - tools/**/*
 
 allowBuilds:
     "@swc/core": true
+    "@vscode/vsce-sign": true
     edgedriver: true
     esbuild: true
     geckodriver: true
+    keytar: true
 
 overrides:
     esbuild: 0.26.0

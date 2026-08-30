@@ -9,7 +9,7 @@ let lastApp = null;
 if (fs.existsSync(CACHE_FILE)) {
     try {
         lastApp = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8")).target;
-    } catch (_) {}
+    } catch (_err) {}
 }
 
 console.log(`🧹 开始清理编译缓存... ${lastApp ? `(优先保留最近应用: ${lastApp})` : ""}\n`);
@@ -66,7 +66,7 @@ function removeDirWithProgress(targetPath, label) {
         try {
             // 使用 lstatSync 避免软链接导致的死循环或异常
             stats = fs.lstatSync(currentPath);
-        } catch (_) {
+        } catch (_err) {
             return;
         }
 
@@ -144,6 +144,6 @@ try {
         stdio: "inherit",
         env: { ...process.env, FORCE_COLOR: "1" },
     });
-} catch (_) {
+} catch (_err) {
     console.log("💡 未检测到 cargo-sweep，建议执行 `cargo install cargo-sweep` 获得更佳体验。");
 }

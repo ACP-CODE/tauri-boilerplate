@@ -47,7 +47,9 @@ function runVpr(vprArgs) {
 const { target, extraArgs } = resolveTargetAndArgs();
 
 if (!target) {
-    console.error("未指定 target（或 -e2e 对应的基础 app），请设置 npm_package_config_app 或通过参数传入");
+    console.error(
+        "未指定 target（或 -e2e 对应的基础 app），请设置 npm_package_config_app 或通过参数传入",
+    );
     process.exit(1);
 }
 

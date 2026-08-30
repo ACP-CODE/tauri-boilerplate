@@ -1,21 +1,21 @@
 {
-    "$schema": "https://schema.tauri.app/config/2",
-    "identifier": "dev.org.Application",
-    "bundle": {
-        "icon": [],
-        "linux": {
-            "appimage": {
-                "bundleMediaFramework": false,
-                "files": {}
-            },
-            "deb": {
-                "files": {}
-            },
-            "rpm": {
-                "epoch": 0,
-                "files": {},
-                "release": "1"
-            }
-        }
+  "$schema": "https://schema.tauri.app/config/2",
+  "identifier": "dev.org.Application",
+  "bundle": {
+    "icon": [],
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": false,
+        "files": {}
+      },
+      "deb": {
+        "files": {}
+      },
+      "rpm": {
+        "epoch": 0,
+        "files": {},
+        "release": "1"
+      }
     }
+  }
 }

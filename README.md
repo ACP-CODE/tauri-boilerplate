@@ -24,26 +24,14 @@ Inside of your Tauri monorepo, you'll see the following folders and files:
 │   │   ├── tsconfig.node.json
 │   │   ├── package.json
 │   │   └── vite.config.ts
-│   ├── website/
-│   │   ├── src
-│   │   ├── tests
-│   │   ├── package.json
-│   │   └── *.config.ts                      # (`astro` or `vite`)
+│   └── website/
+│       ├── src
+│       ├── tests
+│       ├── package.json
+│       └── *.config.ts                      # (`astro` or `vite`)
 ├── packages/                                # Shared `ui` or `lib`
 ├── scripts/
 ├── Cargo.toml
 ├── package.json
 └── vite.config.ts
 ```
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command             | Action                                          |
-| :------------------ | :---------------------------------------------- |
-| `pnpm install`      | Installs dependencies                           |
-| `pnpm dev`          | Starts local dev server at `localhost:1420`     |
-| `pnpm build`        | Build your production site to `./dist/`         |
-| `pnpm tauri ...`    | Run CLI commands like `tauri add`, `tauri info` |
-| `pnpm tauri --help` | Get help using the tauri CLI                    |

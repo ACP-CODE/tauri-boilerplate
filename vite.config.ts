@@ -20,6 +20,6 @@ export default defineConfig({
         lint: true,
     },
     test: {
-        projects: ["apps/*", "packages/*"],
+        projects: ["apps/*", "packages/*", "tools/*"],
     },
 });

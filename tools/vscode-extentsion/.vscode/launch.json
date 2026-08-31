@@ -5,8 +5,22 @@
       "name": "Run Extension",
       "type": "extensionHost",
       "request": "launch",
+      "runtimeExecutable": "${execPath}",
       "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+      "sourceMaps": true,
       "outFiles": ["${workspaceFolder}/out/**/*.js"],
+      "preLaunchTask": "${defaultBuildTask}"
+    },
+    {
+      "name": "Run Extension Tests",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--extensionTestsPath=${workspaceFolder}/out_test"
+      ],
+      "outFiles": ["${workspaceFolder}/out_test/**/*.(m|c|)js"],
       "preLaunchTask": "${defaultBuildTask}"
     }
   ]

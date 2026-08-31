@@ -1,5 +1,5 @@
 {
-  "name": "solus",
+  "name": "extension",
   "displayName": "%extension.displayName%",
   "version": "0.0.1",
   "private": "true",
@@ -11,20 +11,31 @@
   "publisher": "Cyril",
   "main": "./out/extension.js",
   "scripts": {
-    "vscode:prepublish": "vpr build",
-    "build": "tsc -p ./",
-    "dev": "tsc -watch -p ./",
-    "tsc": "tsc",
+    "vscode:prepublish": "npm run compile",
+    "compile": "rolldown -c rolldown.config.ts",
+    "compile:dev": "DEV=true npm run compile",
+    "watch": "vpr compile --watch",
+    "pretest": "compile && vp lint",
+    "test": "TEST=true vpr compile && vscode-test",
     "vsce": "vsce"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.20.1",
     "@types/vscode": "1.105.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "@vscode/vsce": "^3.9.2",
-    "typescript": "^5.6.0"
+    "rolldown": "^1.2.6"
   },
   "l10n": "./l10n",
-  "contributes": {},
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
   "activationEvents": [],
   "engines": {
     "vscode": "^1.105.0"

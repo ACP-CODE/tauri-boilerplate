@@ -12,7 +12,6 @@ if (!action) {
 
 const cwd = process.cwd();
 
-// ----- 读取 pnpm-workspace.yaml 提取所有一级目录 -----
 function getWorkspaceRoots() {
     const yamlPath = path.join(cwd, "pnpm-workspace.yaml");
     if (!fs.existsSync(yamlPath)) return ["apps", "packages"]; // 兜底默认值
@@ -81,15 +80,12 @@ if (!target) {
     process.exit(1);
 }
 
-// ---------- e2e 命令：仅在 target 后缀和命令映射上有差异 ----------
 const e2eActions = ["wdio", "test:e2e"];
 if (e2eActions.includes(action)) {
     const cmd = action === "test:e2e" ? "test" : action;
     runVpr(["--filter", `${target}-e2e`, cmd, ...extraArgs]);
 }
-// ---------- e2e 逻辑结束 ----------
 
-// isTauri 判断改为基于动态解析出的 workspaceRoots，而不是硬编码 apps/packages
 const isTauri = workspaceRoots.some((root) =>
     fs.existsSync(path.join(cwd, root, target, "src-tauri")),
 );
